@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'seven segment';
+  src: url('assets/fonts/dseg7modern-bold-webfont.woff2') format('woff2'),
+    url('assets/fonts/dseg7modern-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: teal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrapper {
+  width: 80%;
+  border: 2px solid black;
+  margin: 200px auto 0px auto;
+  padding: 30px;
+  background-color: brown;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#display {
+  width: 100%;
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  margin-bottom: 5px;
+  text-align: right;
+  font-size: 30px;
+  padding: 5px;
+  font-family: 'seven segment';
+}
+
+#keypad {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+  margin-left: 6px;
+}
+
+button {
+  padding: 10px;
+  border: 2px solid black;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: 'seven segment';
+}
+
+button:hover {
+  background-color: rgba(128, 128, 128, 0.507);
+  border: none;
+  border-radius: 20%;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#clear {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  color: chocolate;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+#clear:hover {
+  color: white;
+}
+
+#equals {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  background-color: chocolate;
+  color: white;
+}
+
+#equals:hover {
+  background-color: rgba(128, 128, 128, 0.507);
+}
+
+@media (min-width: 729px) {
+  .wrapper {
+    width: 50%;
+    margin: 200px auto 0px auto;
+    padding: 30px;
   }
 }
